@@ -1,0 +1,1522 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20193.19.1017.1259                               -->
+<workbook original-version='18.1' source-build='2019.3.1 (20193.19.1017.1259)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='UnemploymentRateAnalysis_15742867111740' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='UnemploymentRatesbyTown' inline='true' name='federated.1d7146x1iaoen411be2w20w8nlr6' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='UnemploymentRatesbyTown' name='textscan.1j8ofu914jqb2013xd37q1shp28a'>
+            <connection class='textscan' directory='/Users/staceyterrell/opioid_deaths' filename='UnemploymentRatesbyTown.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='Opioid_Related_Deaths_2012-2018' name='textscan.0v4iaii1vsxe4u12vicz60dh2biw'>
+            <connection class='textscan' directory='/Users/staceyterrell/opioid_deaths/Data' filename='Opioid_Related_Deaths_2012-2018.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[UnemploymentRatesbyTown.csv].[TOWN]' />
+              <expression op='[Opioid_Related_Deaths_2012-2018.csv].[DeathCity]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.1j8ofu914jqb2013xd37q1shp28a' name='UnemploymentRatesbyTown.csv' table='[UnemploymentRatesbyTown#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='TOWN' ordinal='0' />
+              <column datatype='integer' name='Year' ordinal='1' />
+              <column datatype='real' name='Rate' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0v4iaii1vsxe4u12vicz60dh2biw' name='Opioid_Related_Deaths_2012-2018.csv' table='[Opioid_Related_Deaths_2012-2018#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='ID' ordinal='0' />
+              <column datatype='datetime' name='Date' ordinal='1' />
+              <column datatype='integer' name='Age' ordinal='2' />
+              <column datatype='string' name='Sex' ordinal='3' />
+              <column datatype='string' name='Race' ordinal='4' />
+              <column datatype='string' name='ResidenceCity' ordinal='5' />
+              <column datatype='string' name='ResidenceCounty' ordinal='6' />
+              <column datatype='string' name='ResidenceState' ordinal='7' />
+              <column datatype='string' name='DeathCity' ordinal='8' />
+              <column datatype='string' name='DeathCounty' ordinal='9' />
+              <column datatype='string' name='Location' ordinal='10' />
+              <column datatype='string' name='LocationifOther' ordinal='11' />
+              <column datatype='string' name='DescriptionofInjury' ordinal='12' />
+              <column datatype='string' name='InjuryPlace' ordinal='13' />
+              <column datatype='string' name='InjuryCity' ordinal='14' />
+              <column datatype='string' name='InjuryCounty' ordinal='15' />
+              <column datatype='string' name='InjuryState' ordinal='16' />
+              <column datatype='string' name='COD' ordinal='17' />
+              <column datatype='boolean' name='Heroin' ordinal='18' />
+              <column datatype='boolean' name='Synthetic Opioids' ordinal='19' />
+              <column datatype='boolean' name='Prescription Opioids' ordinal='20' />
+              <column datatype='string' name='DeathCityGeo' ordinal='21' />
+              <column datatype='real' name='DeathCityLat' ordinal='22' />
+              <column datatype='real' name='DeathCityLong' ordinal='23' />
+              <column datatype='string' name='Drug_Category' ordinal='24' />
+              <column datatype='integer' name='Drug_Type' ordinal='25' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[UnemploymentRatesbyTown.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOWN</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TOWN]</local-name>
+            <parent-name>[UnemploymentRatesbyTown.csv]</parent-name>
+            <remote-alias>TOWN</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[UnemploymentRatesbyTown.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rate</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Rate]</local-name>
+            <parent-name>[UnemploymentRatesbyTown.csv]</parent-name>
+            <remote-alias>Rate</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sex</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sex]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Sex</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Race</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Race]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Race</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ResidenceCity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ResidenceCity]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>ResidenceCity</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ResidenceCounty</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ResidenceCounty]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>ResidenceCounty</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ResidenceState</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ResidenceState]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>ResidenceState</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DeathCity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DeathCity]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>DeathCity</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DeathCounty</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DeathCounty]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>DeathCounty</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Location</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LocationifOther</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[LocationifOther]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>LocationifOther</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DescriptionofInjury</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DescriptionofInjury]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>DescriptionofInjury</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>InjuryPlace</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[InjuryPlace]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>InjuryPlace</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>InjuryCity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[InjuryCity]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>InjuryCity</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>InjuryCounty</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[InjuryCounty]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>InjuryCounty</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>InjuryState</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[InjuryState]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>InjuryState</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>COD</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[COD]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>COD</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Heroin</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Heroin]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Heroin</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Synthetic Opioids</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Synthetic Opioids]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Synthetic Opioids</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Prescription Opioids</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Prescription Opioids]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Prescription Opioids</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DeathCityGeo</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DeathCityGeo]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>DeathCityGeo</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DeathCityLat</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DeathCityLat]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>DeathCityLat</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DeathCityLong</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DeathCityLong]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>DeathCityLong</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Drug_Category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Drug_Category]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Drug_Category</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Drug_Type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Drug_Type]</local-name>
+            <parent-name>[Opioid_Related_Deaths_2012-2018.csv]</parent-name>
+            <remote-alias>Drug_Type</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Death City Geo' datatype='string' name='[DeathCityGeo]' role='dimension' type='nominal' />
+      <column caption='Death City Lat' datatype='real' name='[DeathCityLat]' role='measure' type='quantitative' />
+      <column caption='Death City Long' datatype='real' name='[DeathCityLong]' role='measure' type='quantitative' />
+      <column caption='Death City' datatype='string' name='[DeathCity]' role='dimension' type='nominal' />
+      <column caption='Death County' datatype='string' name='[DeathCounty]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Descriptionof Injury' datatype='string' name='[DescriptionofInjury]' role='dimension' type='nominal' />
+      <column caption='Drug Category' datatype='string' name='[Drug_Category]' role='dimension' type='nominal' />
+      <column caption='Drug Type' datatype='integer' name='[Drug_Type]' role='measure' type='quantitative' />
+      <column caption='Injury City' datatype='string' name='[InjuryCity]' role='dimension' type='nominal' />
+      <column caption='Injury County' datatype='string' name='[InjuryCounty]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Injury Place' datatype='string' name='[InjuryPlace]' role='dimension' type='nominal' />
+      <column caption='Injury State' datatype='string' name='[InjuryState]' role='dimension' type='nominal' />
+      <column caption='Locationif Other' datatype='string' name='[LocationifOther]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Residence City' datatype='string' name='[ResidenceCity]' role='dimension' type='nominal' />
+      <column caption='Residence County' datatype='string' name='[ResidenceCounty]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Residence State' datatype='string' name='[ResidenceState]' role='dimension' type='nominal' />
+      <column caption='Town' datatype='string' name='[TOWN]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Year]' role='dimension' type='ordinal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/staceyterrell/Documents/My Tableau Repository/Datasources/UnemploymentRatesbyTown.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='11/20/2019 09:51:19 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='UnemploymentRatesbyTown' increment-value='%null%' refresh-type='create' rows-inserted='25473' timestamp-start='2019-11-20 21:51:19.388' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>TOWN</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TOWN]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TOWN</remote-alias>
+              <ordinal>0</ordinal>
+              <family>UnemploymentRatesbyTown.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>43</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Year</remote-alias>
+              <ordinal>1</ordinal>
+              <family>UnemploymentRatesbyTown.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Rate</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Rate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Rate</remote-alias>
+              <ordinal>2</ordinal>
+              <family>UnemploymentRatesbyTown.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5513</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>3112</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Age</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>76</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Sex</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Sex]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Sex</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Race</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Race]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Race</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ResidenceCity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ResidenceCity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ResidenceCity</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>408</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ResidenceCounty</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ResidenceCounty]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ResidenceCounty</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>65</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ResidenceState</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ResidenceState]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ResidenceState</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DeathCity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DeathCity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DeathCity</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>43</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DeathCounty</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DeathCounty]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DeathCounty</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Location</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Location]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Location</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LocationifOther</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[LocationifOther]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LocationifOther</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>497</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DescriptionofInjury</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DescriptionofInjury]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DescriptionofInjury</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>367</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>InjuryPlace</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[InjuryPlace]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>InjuryPlace</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>77</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>InjuryCity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[InjuryCity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>InjuryCity</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>191</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>InjuryCounty</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[InjuryCounty]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>InjuryCounty</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>InjuryState</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[InjuryState]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>InjuryState</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>COD</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[COD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>COD</remote-alias>
+              <ordinal>20</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3270</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Heroin</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[Heroin]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Heroin</remote-alias>
+              <ordinal>21</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Synthetic Opioids</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[Synthetic Opioids]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Synthetic Opioids</remote-alias>
+              <ordinal>22</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Prescription Opioids</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[Prescription Opioids]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Prescription Opioids</remote-alias>
+              <ordinal>23</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DeathCityGeo</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DeathCityGeo]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DeathCityGeo</remote-alias>
+              <ordinal>24</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>43</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DeathCityLat</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[DeathCityLat]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DeathCityLat</remote-alias>
+              <ordinal>25</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>43</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DeathCityLong</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[DeathCityLong]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DeathCityLong</remote-alias>
+              <ordinal>26</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>43</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Drug_Category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Drug_Category]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Drug_Category</remote-alias>
+              <ordinal>27</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Drug_Type</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Drug_Type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Drug_Type</remote-alias>
+              <ordinal>28</ordinal>
+              <family>Opioid_Related_Deaths_2012-2018.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.603093' measure-ordering='alphabetic' measure-percentage='0.396907' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='UnemploymentRatesbyTown' name='federated.1d7146x1iaoen411be2w20w8nlr6' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1d7146x1iaoen411be2w20w8nlr6'>
+            <column caption='Drug Category' datatype='string' name='[Drug_Category]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Rate]' role='measure' type='quantitative' />
+            <column caption='Town' datatype='string' name='[TOWN]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Year]' role='dimension' type='ordinal' />
+            <column-instance column='[Rate]' derivation='Avg' name='[avg:Rate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Drug_Category]' derivation='Count' name='[cnt:Drug_Category:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOWN]' derivation='None' name='[none:TOWN:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1d7146x1iaoen411be2w20w8nlr6].[none:TOWN:nk]'>
+            <groupfilter function='level-members' level='[none:TOWN:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1d7146x1iaoen411be2w20w8nlr6].[none:Year:ok]'>
+            <groupfilter function='level-members' level='[none:Year:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1d7146x1iaoen411be2w20w8nlr6].[none:TOWN:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1d7146x1iaoen411be2w20w8nlr6].[cnt:Drug_Category:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:Year:ok]</column>
+            <column>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:TOWN:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1d7146x1iaoen411be2w20w8nlr6].[avg:Rate:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1d7146x1iaoen411be2w20w8nlr6].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1d7146x1iaoen411be2w20w8nlr6].[cnt:Drug_Category:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1d7146x1iaoen411be2w20w8nlr6].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1d7146x1iaoen411be2w20w8nlr6].[avg:Rate:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1d7146x1iaoen411be2w20w8nlr6].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/diamond' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1d7146x1iaoen411be2w20w8nlr6].[cnt:Drug_Category:qk] + [federated.1d7146x1iaoen411be2w20w8nlr6].[avg:Rate:qk])</rows>
+        <cols>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:TOWN:nk]</cols>
+      </table>
+      <simple-id uuid='{819CAAE4-4EEA-4782-8696-CD978AD170FA}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='UnemploymentRatesbyTown' name='federated.1d7146x1iaoen411be2w20w8nlr6' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1d7146x1iaoen411be2w20w8nlr6'>
+            <column caption='Drug Category' datatype='string' name='[Drug_Category]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Rate]' role='measure' type='quantitative' />
+            <column caption='Town' datatype='string' name='[TOWN]' role='dimension' type='nominal' />
+            <column-instance column='[Rate]' derivation='Avg' name='[avg:Rate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Drug_Category]' derivation='Count' name='[cnt:Drug_Category:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOWN]' derivation='None' name='[none:TOWN:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.1d7146x1iaoen411be2w20w8nlr6].[none:TOWN:nk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#b30017' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1d7146x1iaoen411be2w20w8nlr6].[avg:Rate:qk]</rows>
+        <cols>[federated.1d7146x1iaoen411be2w20w8nlr6].[cnt:Drug_Category:qk]</cols>
+      </table>
+      <simple-id uuid='{FE3A182E-38E6-44FB-905A-5E70B0F7BF79}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.1d7146x1iaoen411be2w20w8nlr6].[none:Year:ok]' type='filter' />
+            <card pane-specification-id='1' param='[federated.1d7146x1iaoen411be2w20w8nlr6].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:Drug_Category:nk]</field>
+            <field>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:TOWN:nk]</field>
+            <field>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:Year:ok]</field>
+            <field>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:Year:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{918D5C35-23F5-406F-BCFA-56BD7CC4C380}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:Drug_Category:nk]</field>
+            <field>[federated.1d7146x1iaoen411be2w20w8nlr6].[none:TOWN:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{328D25B6-A4E7-48D1-89C6-BE434D94D599}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO29eXAc6X3f/e1r7hNzYGZwEQdxA+TyJldarbTSbjaWrEixI+VYl+KjSo4q
+      zp3XbxK/r/y+Pl65nJRTqcRlJSlX5KxsWYm9K8mSda+05JK7JJcgCZAgDuKc+z57evp6/5id
+      WQy6BwRAAAMS/anaWqJ/09NPTz+/5/ldz9OELMsyNDSOKGSrG6Ch0Uo0BdA40mgKoHGkoVvd
+      AI2nC1kSEIsnAZBwuV2gqcM9xmoKoLGnyCKHq99+DVlLDz7+/DOYun0PJ06OQywVwNI20FIJ
+      +VQcsYKISxfOgCGJlraX0KJAGnvN+s0rSLgGELv9Bvz9g7hzbxFtyRUkfOMwCnmE10LweRy4
+      9Im/gw6HoaVtPdzzk8YTCwHAYtTj9p17cAd6EXQPwJqehXfwPOwuD5xWIw7DyKvNABp7jixJ
+      kAkChCyjxJZhNBkhSzIACQRJQZYkEAAIkgRBHBITSBRFsCzb0sZoaBw0dSeYIAgwDLMvFymX
+      ywAAg6G19p6GxmbqCkCSJPR6/bZO4jkWmWweNqcLAldEuSLCbrMgncrA0eaCUC6gLAAOuw0E
+      AUiSBFmWt/39GhoHxa58gFwqgXgqhWSmDIFLw9fRC7mYAUvQqFQAjk2DFICx8xdg0VFgWRay
+      LMNkMu3HPWho7Jpd5QEsNitu37gKS/cJ2I0SQmvLMOjsOHn2OG5dvQOT3QGfjkJZlGAQZIii
+      CFmWwfP8XrdfQ+Ox2JUCxEJBWL3dKLMZMKQMXpTg0Am4+tY7sDq9yCWDSFZkXOo7DpqmQFEU
+      ZFneNx9DQ2O37MoEqo7mAhiGrtr3IECRBPgKD0bHQJZEiDJAUzQIApoJpHFoOZA8AMuykAUO
+      uuwCAECQKdCECACgfJMgaN1+N0FDQ5UDqwWSiwmwX/8cBJnE/535h/gXtj9HG5WH+Zd/AMLq
+      O6hmaGg0cOClEBQk9NIRfJu9AC0HrdFqDlwBCAL4uPEtvFUeR1KyHfTlNTQaaEkxnI9O46Ru
+      Hn/Nnm/F5TU06rSsGvTjpqu4xo0iwWnZYY3W0TIFCNBJnGAW8Y1rS5ovoNEyWroe4G+aruHq
+      1Dxi6UIrm6FxhGmpAgSoBCY7jfjW1XltFtBoCS1VAIIAPvmBIVybWdNmAY2W0PIlkV3tdkz0
+      teOvtFlAowW0XAEIAJ/84BCuTK8hnim2ujkaR4yWKwAAdHvtmOz34q+uzmmzgMaBcigUgCAI
+      fPq5EbwxtYJUrtTq5mgcIQ6FAgBAp8eG04N+vH7lQaubonGEODQKQBAEPvXcCH54cwmlsrZy
+      TONg2JUCcKU81lbXUOIE5DMpROMpiEIF62vr4HgR+UwS0Xhqx/Z8wG3BMZ8d786Fd9MsDY0d
+      s6v1ADwvADKP6bvTAMdCp6cQekjA7G7D9N374CsFMJIMk/0srLrtX4IiSZwf6cTVe+t4dqKr
+      5ZsmaTz97EoBTBYTbt+4BlOgDzq9FQ6LjIWHCYyf7cLUtbsw2qzw6ShwogyjIEAURUiiCLXu
+      LAgCiA2L5c8M+fDnP55BvsjCqNfWEGvsL7tbFB8Mwuj0ga8IKGeDSCQpdATacPXKO3C6A8gl
+      1zDDAc/2DYKmSVAUBYKiIKk1gKZBblgs73fb0N5mwf3VNM6Pduz2vjQ0tsWuFKC9qxfugASK
+      IiHLI5BlgKJIHOMF0AwNWToG6b1jO4UgCFwc68TVmTWcGwloZpDGvrIrJ5ggCNA0BYIgQJJk
+      vaPTTFWfiA3HdsP50Q5ML8VQ4rRokMb+cmjCoBvp9NhgNujwYDXZ6qZoPOUcSgXYaAZpu7dr
+      7CeHUgEA4MxwADNLcZQ44ZGfFUQJM0txiJKam62h0ZxDqwC9PgdIksDDUGrLz8ky8ObtFfzG
+      f/8RXv3+XYiipgQa2+fQKgBFkTg30oGrM+tbfi5XKuPrb9zDL3/8FG4+COOPvzMFXhAPqJVK
+      SmUeN+fCmun2hHBoFQAAzo104M5iFOWKuhkkyzJef/MBurw2vHx+AL/5i8/j3nIcf/SNmy1T
+      grfvB/EHX7+GXJFryfU1dsahVoA+vxOyDDwMpVXlq9Es3phaxisvnQBBEHBYDPjNX3weoUQe
+      f/D1t5sqzn5y+c4qckUOi03arHG4ONQKoGMonBr04+17SjNIlCT8yffu4KOn+9DhttaPW016
+      /NtXPohyhcfv/9lbKLKVA2tvIlvCSjSDZye6MLUQObDrauyeQ60AAHBhtAM358IKk+b6bAiR
+      VAEff3ZQkS02G3X4F5+5BB1D4Ut/euXAzJGp+Qg6PTZ87EwfphYikDQ/4NBz6BWgL+AEZGAp
+      nKkfYzkeX/3+XfydD4/BZlLfWc5kYPBrnz4Pl82E3/vTK/seIpVl4PLdVVwa70JfwIkyJyCS
+      1Ha6OOwcegUw6hmM93nxzv1g/di3r83DaTXi4ljnluca9DR++WeeQTLH4mEos+VnH5dUroSV
+      aBanBv2wmfTo9NhwfyW+r9fUeHwOvQIAwMWxTrx9PwhJkhHPlPCNK3N45cVJMDT1yHNNBgYT
+      fV7cmA0+8rOPw40HYfT5HWizGkEQBE4M+HBrXvMDDjtPhAIMdLaBF0QsRzJ49ft3cGm8E/0d
+      zm2dSxAELox24tq94L7F5mVZxpX3zB+SrPojJwfaMb0Ug6Al5g41T4QCmPQ6jB3z4H9+/w5u
+      zUfw2RfGd1QmPdLjRrZYRnifbPJ0oYzFUBqnhwL1Y742C8wGHRaDW2eyNVrLE6EABAFcHO/C
+      zQdhfPaF5o5vMww6Gif6fbimEk7dC67NrGPsmAc28/vt0jEUhrvduL0Y3ZdrauwNu1KAbCKC
+      G9evYzkUw+zMFG7dvotUPIKrb11FOJ7B3MxtXL95B6K0dybHRK8Xf/eFcXzsTP+OF8kQBIEL
+      Yx145z0/Yi+RZBlvTa9VzZ8N7SIIAs8c92FqPqKVRRxidrcm2NaGvi4eq8ksCskkOnoGEQvG
+      cOLMSUzfvAfGzMBnJJGpCHDqKEiSBKlJGFKSJMjio8sWaIrAzz8/AqD64u2dMtHrxX/63+8g
+      kS3CZTPu+PxmJHMsFkNp/OvPtivaNdLjwn/6i3dQZDltffMhpekM8Lu/+7tNT8onQ3iwnsXE
+      6ABOPnMOhVQYyUwJkigDBAFJqmZqG768xSsbjXoa431eXJ8N7en3Xru3jsk+L8xG5atebWY9
+      etrtmF7SwqGHlaYzQCwWw+rqKnieR39/f4OsUOLAEDzWglGw6QjKsh6jk37cvXUbfUOjyMVW
+      ES8D3Xoa5HvLJkGQqoviSZIEST06nLkXXBjtxE9vr+Dl88fr0ZrHQZQkvH0vhJfO9YNSuQcK
+      wORAO24vRnF+tPNQrW/OFMpYi2Ux3us9VO06aLY0gRYWFlAsFhGLxXDx4sX68e7+IXTX/uh8
+      /x2/Fy95AQDtrok9b+hecGrQjz/+9hSyxTKc1sc3gxKZau3P6SF/0888M+DDH75+A6Ikg6YO
+      R0eTZRk/vPkQP761jP/whZegYw5mADqMNDWBTp06hfb2dnR0dGBhYeEg27RvOCwG9PodmFp4
+      dGRGluVHOq9v3w9ioq8dZkPzN90PdbuRyrFIZA7Xpr9v3wsimMgjlWdb3ZSW0lQBXnnlFYyN
+      jeHUqVN45ZVXDrJN+8rFsU5c28Za49VoFr/9J2/i9oJ6FEcQJVydWccHJrq2/B6aIjHe58Wt
+      hcOz3WMqX8ZaLIfBThfuLR9t/2TLMGg+nwfPP11bkzwz6MdiKI3sFhWi5YqAP3z9Bhiawn9+
+      7Tq+9NUrWI/nGhQhmiogkirgxICv6ffUr3nch6n56KEJh75zP4jxPi/OjXRg+mGs1c1pKVsq
+      AMuyeO211/DVr34ViUTioNq0r7Q7zXDZTE1HPlmW8b9/cg86msI//fnz+P1ffREBtxW/8d9/
+      jK989w4yhTKAqvkzdswDi0r0ZzMTve1YDKUOxT5HkiTjnftBnBvpwNgxDxZCKXD8wS8cOixs
+      6QSn02kwDIPTp09jaWkJbrf7oNq1bxAEgfOjHbh2bx0Xx5SRmZmlON64tYL/63PPQc/Q0DM0
+      XnlxEh95phdf/eFd/Pof/QA/+2z1lU4/96HRbV0z4LaCoSisRLIYPebZj9vaNgW2gtnVBP7J
+      z52HnqFQZHkkMiV0eGz7et3/8ddTeLCWhNtugt2sh82kh81sgN2sh92iR3e7A2bDwedKtlSA
+      fD6P4eFh+Hw+9Pb2HlSb9p1Tg3587/oiCiwPq+n9EbzAVvDlb97Ez394FJ0bOgRBEOj02vAv
+      P3MJdx9G8eoP7iJbKGO8d3udmSQJnBhox9R8pOUKcHsxgmM+BxwWAwCgx2fH7FpyXxVAlmUs
+      hTO4NNYFiiSQLXFIF8pYiWaRLXJIZksgSQKf/MAwPjDRdaBJwy0VwOfz4cqVK0ilUg1h0Ced
+      Lq8NRj2D+fUkTg1WQ5iyLONPvnsbHR4bPnKqVzU2Xu3IPoz0eJDKs7DuoCbp5IAPr12exWek
+      MVBka0qwZFnG2/eCDZsOj/d6Mf0whhdO7d8AVxFEUCSJn7l4XPV3FSUJt+Yi+NqPZvCtt+bw
+      qQ8O4+J4J/TMrgoVdsSWTyIej8NsNiMaPTwO3F5AkSTODgfw9r3qGgFZlnHjQQg3HoTxKx8/
+      BfoR+5rqGAq+NsuOrjnY7UI8U0I6X951ux+XYpnH7GoCpwffz1uMHvNgfj2Jyj7uohFLF+F1
+      mpom3CiSxJnhAP6/z7+Az3xkDK9dnsWv/9EPceXu6r6Xk2+pYpIkgef5XdXe7ASpGAf3o99R
+      HDe8+P9ArhTBvfElpeyl3wKhM+/6mmeHO/Dvv/YWyhUBLCfgD1+7gV/9W2fQtod1Qhtpsxrh
+      dZoxu5rABya6H33CPjC3loTJwDSYd11eGyqCiGiqgC6vfV+uO7UQwXiv95Gfo0gSl8a7cH6k
+      A1em1/BnP5rBX/x0Fv/H33sWXufun/VWbDnUud1uMAwDnU6HcHgf49iVEoSF7yv+kwUOcqWo
+      KoP4eBGVnnY7dDSFB6tJfPmbN3B2uANnNtTz7wfPHG/tKrFr99ZxYVNJhknPoMtrx9za/mxE
+      LMsypuajqrVSzaAoEh+c7MF/+MKL8DrN+MnU8r60DXiEAszPz+PEiRPgOA63bt3at0a0Ah1D
+      4eRxH778zZtYi+XwC39jct9rYib72zG7kmhJ2JHleMwsxRVlGwRBYLzXi7v7lA/IsxWsxbLw
+      OEw7Oo8gAIam8NyJnj0vYNzIlgpw7tw5XL58GUNDQzhx4sS+NaJVXBjtRDJbwuc/eWbLcoa9
+      4pjPAUmWsRbL7fu1NrMcyUCSZfT5lUtJx4558GAtuS/29ko4Ax1Dwd9mffSHVRg75kE4VUBy
+      n94fvaUC3L9/H7IsIxQKIRDYX/OgFQx2ufClX/0Yxg4oNGnQ0RjudmOqBWbQO/dDeOa4T3Uj
+      gcB7G4uFEvk9v+7UQgQn+n27rr61GHU43tm2b6bjlgrgdDqRTqfB83y1pPkpg6ZI9LTbD7Qc
+      +MyQ/8A3z+UFEbfmwzg3ov7ONbOBQYfbuud+gChJuPMwhhMD7bv+DpIkcHowgBuzoX35zZr2
+      almWkUwm8bnPfQ5Wq3XfI0G7QcqsofS/fknxn8wf3grH4W43EpkSEtmDqw5dj+fAcgKOd7ap
+      ymt+wPTS3voBySyLTKHc9Lrb5cywH3cfRlHh974PNg2DyrKM6elpJJNJdHZ2blrwIUMUpeqs
+      IMv1F+IJggCapiFLEiRZVl0kspfIfAni2tsqgsO7FUmbzQify4L7Kwl4HPsT2tvMzbkwhnvc
+      W/o5471efPvaPCRJ3pPFQgDwYC0Br8NczzrvFo/dDI/DjJnleD1xuVc0VQCSJHHmzBlcvnwZ
+      uVyuwQlOhNexEooDjB5cKgoeNNpddiRyRVgdHhSSQVQqwIUPfRDGI7zYQg2CIHB60I/rsyE8
+      d6Jn369Xy/5++rnhLT/nd1tAkgTW4zl0t+9NPuDWfATPHPc9tolJEMCZoQCuzwb35Ps2smUi
+      jOM4nDhxAqurq5AkqT6iu9r9WFtagSvgR540Vl+UvZjAsx8+i1tX78Da5kG7nkJRkMAQ8iNf
+      lA1BPSy4lYwXBMjNzuN5gGh95WUzJvs8+MaVByiyZei2sbvd4xBOFpDJsxgIOLYsbWcoAp1u
+      K+4tx+Bv21nIUg1eEHF/OY6Pnjq2JyX1Jwe8+C+v3USpzO3pb9ZUAdLpNAKBAAKBAEwmU4MT
+      PH/7BjiTG2ajCaHMItgiBadDh9nZBVBmI/L5DEppGRM9x0HT1CNflA2IUKvOp2kaMq3eRIam
+      IdE01DY/pxkGBHN4d2Ho8NphNemxFMltK0P6OMysJHDM74TbYXnkyDnR3477Kwn8jfPHH/u6
+      a/ECCILAMX8bmD14FiM9XrCcgFiGRa9KKHe3NFWAUqmE+/fvw2QyYXFxEadOnar/gF1D43AU
+      WDA0g4kT42B5Am12E2KxJNo8HvBsHiwPmDTzRxUdTWOs14Nb89srEcgVOfzg5kO0WY2wmfWw
+      m/UwGXTQMxR0DAU9Q4GmSEUHl+Xq0scPTHRvy2wY7/Xim2/NQZblxzYzppdi6As4YdTvTUEb
+      RZF4ZtCHG7Ohg1GAQCCAeDyOd999F88//3zDDGA0WWA01YrBTKi5cj5/dXWUzurAwbh3TyY1
+      m/Yr372Nf/CxiUd2tm9ceYB3ZoNod1qQK5aRLXLgBQkURYCmSNAkCbNRB7fdCJfNBJfNCJfd
+      BIOOxlI4gy986uy22hVw26p5n0T+scujp+YjuDTetaf2+pmhAL751hw+/dzIY72IfSNNFYAg
+      CIyPj4PjqsaJKIr7HtU5Sgx1uZDKsYhnSlsWemUKZfzo3SX8u194rvquBFQdW16UUCrzKJV5
+      FNkKMsUyklkWiWwJD8MZXJ8NIZljMdHn3XaBn0FHoT/QhnvL8cdSgGK5gqVIBr/yiVO7/g41
+      xnu9+PI3byKZZ+HdowjalvPTT37yE3Ach9nZWYyNjeGll17ak4tqVLdtH+5249Z8GC+dG2j6
+      ue9cm8dIjwfHfI76MYIgoKMp6CzUY4cYN0IQBMZ6PZheiuGjZ/p2PXrPr6fgtBjgtj++M70R
+      m1mPYz4H7i5G8cLpvh2dK8syZABsmcfcegr9ASesJt3WChAIBDAzM4PR0VHYbPu7ZO6oQRAE
+      Tg/5ceNBGC+eVd/vtMBW8O23F/Cb//D5PYvNP4qJvnZ88605SJIMapf7GN1eiGL0mGdb72/Y
+      KedGOvDObKjpoqUa+RKHlWgWwXgOa7Hqf+vxHPKl6jaV5YqAXr9jawUwm811D/78+fN7eyca
+      ODXox//469vgeBEGXeOjkGUZf3V1DuO93obRf7/pbrejwouIpov1GqGdMjUfwT94cX82R5vs
+      b8frlx8gX6o07Ma9kZVIBv/vV34Ki1GHgNuKbq8dHzvbhy6PDe1tFlAkAZYTMLMc31oBrFYr
+      BgYGcOvWLUiS9FTWA7USl82E9jYz7qlkOAssj++8vYB/9wvPHdjoDwAUSWC4x43ppdiuFCCZ
+      LSGZK+F4p2sfWgcEXFaYDAwWginVrHA0XcTvf+0q/uaF4/jEpUHV6BhQLbW+ONa5dTHc0tIS
+      kskknn32Wc0B3gcIAnh2ohuX76w2FHpJkoyvvzGDM0MB9Af2LuS3vTYRuDjaie9dX8SP3l0C
+      u8OtXK7PhjDSs73tYnYDSRL4wGQ3fjK1oiiOm11N4D9+/RpeOtePT35gCAxNPdKP2VIBrFYr
+      5ubmsLKy8vgt11BAEAQujVXfKVzi3s9qr8dz+OntFfy9jz46RLofPHeyB5/9yDi+e30R/+eX
+      f4gf31ra1kvHZVnGtXvrODfasa+z1vmRDtxfiSNfej8NuhzJ4N//2Vt48Ww/fubC8W1vPND0
+      U5IkYXZ2FmazGW63+0jvILyf+F0WmAxM/VVKsizjtTdn8aGTx/ZtffKjqC1S/61f+jA+8+Ex
+      fOutefyb//pDXL67Cl4Q0awqucKLeLCaxIn+3Zc/bwd/mwVWkx7z69Xy7USmhC+9ehkfvzSE
+      50727KivNvUBIpEI7HY7Xn75ZfzlX/4lxsbGNCXYB6rRoABuPAhhoq8d6/EcphYi+NLnP9rq
+      plXt5PEunBkO4OrMOr72oxm89uZsvYiPFyQIoghekMCLEuLpItrbzHBa9y40qwZFkXjmuA/X
+      Z0MY7HLhd159ExfGuvCJS4MNb+nZDk0VQK/XIxgM4vXXX4fRaNyT9LiGOqcH/fjj70yBF0W8
+      fvkBnp3oPrBS6e1QW5t7abwLP729gtsLUdAUAYaulmAwNAU9TeGY34GXLwyAJPY/WHJ2OIDf
+      +9O3qtWrXjteeWlyx50f2EIBjEYjfvZnfxYmU/P9XDT2hsEuF7KFMt59EMat+Qh+51c+0uom
+      qUJTJD5yqhcf2cdNtLZLd7sdNEVCz9D4wqfO7qrzA1sowPz8PL73ve9hcnISTqcTZ8+e1RRh
+      nzDoaAz3uPGHr9/AsxNd+7YHztOEQUfjX/3dS/C3WR4r4dZUASYnJ6HX6xEOh+Fy7U9MV+N9
+      zgwFcGs+go9fHNQGmm1AEAQGOh5vqSXwiGK4UCiEzs5OTE1Noaen573afY394PxIB9qsRvhd
+      O9tyUePx2NJbOX78OO7evQu3260lwvYZs1GHk3u83E/j0TyyGO7Tn/604h2/kihgeTWI3mPd
+      WFuaQzJfwfG+Hsw9mEf/yDgKiTVkWQIjQ7uvKNTQOAi2TIR95Stfwc2bN/Hqq682bIvCFnJI
+      5aubKK0EwxgYGEBkaQl9w4N4MD2NcKoAppxDljt8W6loaGxkSx9gYGAAFEXhhRdeaDCBzPY2
+      OC3VLNz46Bimb12DJJrRbdQBYnUtr0VHQZRlCIKgLYrXOLRsqQClUgmFQgGVSqVha8RMIoL1
+      tTAovQW5WAgCYUBvrxvXLl9HZ98AsrEVLOSAi8dp0CShLYrXOLRs6QO4XC4sLS3BaGysSXG4
+      ffjQh6rrf+VA9f8EQSDQeQwkSULubK8faxUyz0JKLiqOk+2jIA4gU6nxZLClArjdbgSDQZTL
+      zd9qsrGT19YLHAbHV0otovSnn1Uct/zjmwC9/VcbaTzdbDkUulwuTE5OIpvNHsq9QTU0Hpct
+      FaBUKuHmzZsYGhrS8gAaTyVbKsCDBw/Q1dWFubk5RS5AQ+NpYEsFCAQCWF9fh91u19YDazyV
+      NO3VoVD1hQSf+tSnYDabn6rXpGpo1GgaBTIYDHjjjTeQz+cRDocPRWRHQ2OvaToDOJ1OvPji
+      izCbzfjEJz6hKYDGU8mWmWC32w23232Q7dHQOFA0z1bjSKMpgMaRRlMAjSONpgAaRxpNATSO
+      NJoCaBxpHlsBZFmGJFWzxLV6oY3HNDQOM7va56SQjuP6/WU8f/EMbl2/CpYn0dPhwfJ6BO2d
+      x5CPraLIEbhw6RyYPXqZmYbGfrArBTA73Oj2ZQCZA6P3oN1DYH4+imdfOItb1+5Cb7Ni0EEh
+      WxHhYKSWrAmWBPX1CwLPA7KmlBpVdr3TlQxAJhhUuAJYloTRSCKbKwEUiTLHI1WpoIMkQNN0
+      S9YESzTVfL0wra0X1qiyq6Ewl4qikC1iLZRAZ8ABnrHj9NlJrD98iNHJcRxrd4CwtsGq03aS
+      0zjc7KqH2l0+nHT56n/XXodw8lT1vbCWzl7s7ysSNDT2Bs0Y1jjSHEkbRYzdB/utf6Y4bv7c
+      X0GK3QP77X+1SULA8ovfOZjGaRwoR1IBIHCQs+uqIllVVo1fieE7KP/gi40ikoH5739t79uo
+      cSAcTQXYJTJfgpSYazxIViNKYvgOyj/5vQYRQRtg+rn/dlDN09gFmgLsETKXgxSeajzItOYt
+      jxrbR1OAA0AqxCGGbzUcI0gGdP+HW9QijRqaAhwAUmwG5W/988aDeius/+hqaxqkUUdTgBYj
+      sxmIqYcNxwiSBuWfbFGLjhaaArQYYf0Gyt/6pw3HCKMTls+/2aIWHS20RJjGkUabAQ4xwspV
+      cFf+Y8MxwtQG09/6Ly1q0dOHpgCHGLmcgRSdbjhGmL0tas3TiWYCaRxptBngCYW//y2U//rX
+      G44RtgAsv/S9FrXoyUSbAZ5YVNZca8uwd8yeKoD03muUZFnSXqih8UTw2CbQ9bcvgzbY4bHq
+      sRyKw+3vQj6+BpYjcOHZC9DR2iRz0MhcHlIx3nCMIBmQjq4Wtejw8tgKIAkCBJ5DKi3j/KXa
+      ong7utto5HgRDhy+RfFSkxf+CUJzGb/FeXyz68lVmdikLTzPq758UN5SJjeVoSZ78F3wP/xi
+      g4Swd0H/yjdU23GUeUwFkDA4ehKRtSVks0XEYmkQDA2WLSPGyjjWczgXxUtUExnNQGzyMkCG
+      YSBsJaNVZERVRtAU1N5bzzAMQCllxJYyoqkMW8mIqkxMLkJcv94oMtjBDL2sem9PO4+pACQK
+      mQRoqwunhz1YmF/C2OQoSukochxg0RbFHzrE0LvgfvRbDcfItj4wQy9DSi1BjNxtkBEGO+i+
+      D0GWJUDePIQRIMgn++2hj91Du3oH6v8eGRsFAJh8ndBeq/HkIaxeA/fj3244RroHQfd9CPyt
+      V8H95EuNMu8ozH//zyEs/hj8/W82ypzHoH/21yClliGmFhpklGcYpL1zf25ih2hDtMZjI6WX
+      Icw35h9I/yT0+DXwC99HZVM5h/4jvwHdic9ADN2CzJcbz3P1gbQc3J4imgJotIzy934DUnq5
+      4Zj+o78J3cTfPrA2aAqgcSiRUsuQpUZXnrS0gzDYIKaWAKkxAkhafSD01h1fR1MAjUNJ6bXP
+      K3bnMLz022BGPwn2L34Fcj7SKHv5S2CGf2bH19EUQOOpovTaFyCXMw3H9Jd+DXT3eVTu/i9A
+      aAy4awqg8VQhRWcglxINx2oKUbn8Bwrl0OoUNI40mgJoHGk0BdA40mgKoHGk0RRA40ijKYDG
+      kWbvFUCWEVxewMzsImRZW6OncbjZcwWQxArC6QL05RyynPpCEA2Nw8KeJ8JkSczIpj8AABTQ
+      SURBVAZN0zDrKIjaDKBxyNnzGYBkdECliIVEDna9lmjWONzseQ8lCBInTp17799qq4A1NA4P
+      hPyepyoIArLZ7L5cRJIkQBJAFKPv/S2DJN9TDqsfkGWgEFGRBarL8JrKRKCg9p0dgCw0lRES
+      D7kYU8psHSDEZrJOECIH+b3dFt6XEe+dt0MZQQLWAAihXK9dUcpYyKXkJhkFWP3qMpIGLD4Q
+      fAkym9qBjAEs7SD4ImQ23SijGMDcTKYDzF4QlQLkcqb68nRZBkm8L0MlD5SzDb8lYXRCZszV
+      5yPxm2RtkBlT9ZlLQqPM1AaZNgGFMCCJm2QuyLQRyIcBebPMDZk2APkQIEuNMvkAQjW1PYJI
+      UmlxbSUTRREEQexKRpKk6gy0W5kgCNXF/Xsso5ss+tdkByM7EAWoXUIUxfosQxAEnE7n+w0h
+      CJRKJbAsC6fTCZIk6+cRBAFBEJDJZECSpOp5BoMBxWIRFoulQVY7j6IoOJ3O+ndKkgSe5+uf
+      0+v1DdfjeR7ZbFZxXk2Wy+VAURQcDkeDrFKpIJfLgabppjKGYWC32yHLcl0xavdmsVjq916T
+      pdNp2Gw2UO/tSrFRxnEc8vk8dDodbDZbXVYul1EsFkEQ1Z05NspYlkWpVALx3k4RVqv1sWUA
+      kM/nYTabkc1m679ZTZbL5VCpVGC328EwTF0miiLi8ThcLld1R4sN/SWbzda3f7HZbA3nybKM
+      TCYDURThcDiqO4jsQCZJEux2+8EkwgiCqF98bW0NHMdhfX0dPM/XZQBgNBpRLBbxxhtvYH19
+      vX4uAKyvr6NSqdT/rp0nSRLu3r2L+/fvY35+vkEGAKurq/WOvlHGcRwikQjW1tYQj8cV562s
+      rEAQBMX1ZFnG8vIyKpWK4jtr59Vmp82y5eXlhv18Ns4KVqsVwWAQV65cQTweb5Dlcjm8++67
+      it8EAB4+fNiQb6nJJEnC0tISBEHA8vJyg0yW5bpsaWmp6XlqsocPH0IURcV3SlJ1/6e33367
+      4d5rsCzb8Hft3yRJwmAw4M0338T9+/chSVL9dy4UCgiHw2BZFpFIpOG8YrGISCSi+p35fB7R
+      aFRVlsvlEIvF6sepL37xi1/EAUFRFNra2hAMBsEwDDweT0Mjs9ksstksTp06BQDQ6/V1OUVR
+      CIfDEEURTqez4UemaRo+nw/d3d0KU4MgCESjUUiS1DBzMAyDYrEInueRyWTg9/sV7Y3FYpAk
+      CQ6Ho36sUCggmUyiXC5DluUGGVDtCIlEArIsw263N8hEUUQymVSVRaNRUBSFiYkJ8DwPg8HQ
+      8LvxPA+73Q6jsfHNkzzPI51OgyAI2Gy2hvvT6/VIJpMwm80N7WQYBjqdTlWm0+nAMAxSqRQs
+      FouqLJ1Ow2KxNNxDKpVCMpmEXq+HTqeD2WxuaGc4HEapVILFYqmP9LXfKxgMYnR0tD7L1cxQ
+      i8WCXC4HlmURCAQaziNJEvF4HJVKBVartcG8oSgKsVisqSwajYLnedhstoMvhSgUCnA6nRga
+      GlLY75IkgWXZ+pS/sTOLolif6jdbbSaTCXfu3FGMhhzHQRCE+tS5GYPBAFEUodfrFTJJklAo
+      FBRttFqtsNvtGBwcbLr/ac1caCYrl8uK4xzHgeM4ZLNZhVLFYjHIsoxoNKp6DyRJKnaKS6VS
+      SCQSdXNlM/l8Ht3d3Th27JiqrKenBz09PU1l3d3dDcclSaqP3mq/C03TIAgChUKh4bgoiigU
+      Cnj48CF4nm/orMJ7O/+NjIzAZDI1nCfLMkiShCAIDTN8rS2iKIKmaZRKJcV5tQFFEISDVwCj
+      0YhwOIy5uTnFD2U0GmE0GpHP5xUdtmYuZTKNK3qAqlbb7XZFJ9Dr9TAajWBZVrXTSZKE3t5e
+      WK3KxdQ8z0OWZeTzeYXMbrdjfn5eValYloXFYlE8lEfJajZzsVhUyLxeLwiCQFtbm+p3ZjKZ
+      hhkDANra2uD1eiHLMnQ6neI8i8WCe/fuIRgMKmRWqxUzMzMIhUKqsunpaYTD4YbjHo8HRqMR
+      mUxGNZpI0zSSyWTDoCZJEtbW1iAIAnQ6nWLQoCgKlUoFd+/eVcgEQQBJkjAajYpnW1PEzdcD
+      qs+VoigYDAaUy+WDV4BSqQS73V7dT3OTAtA0DafTiVwup5CZTCY4nU50dXUpbiqVSsHtdoPj
+      lBssJhIJGAyG+mhSQxRFrKysYHFxUdEhi8Ui8vk8LBaLovOUSiVUKhVQFFV3SmvUHlLtHjdj
+      t9ths9ngdiu3DdPpdHA6nUgmk4p23r17FxRF1e3gjdhsNphMJtWOnEqlwHEcEomEQlYoFODx
+      eFQVPJ/Pw+v1binL5XIKmSiKcLlcit8aqHbK7u7uhnsnCAKdnZ3w+Xzo7+9XmKG1Ac1kMilG
+      cpqm4Xa74XK5GmZwURQRiURAUVR9QN2IwWAATdMQRbE1JlBt2lIbPQVBQDpdjTVv7uQGgwEm
+      kwkzMzOKc/1+P2KxmOoI6XK50N3d3WAfA9XRpXZ886xiNBpBEAS6u7sbnF2g+jB0Ol09ArQR
+      mqaRy+Xg8XgU3ykIQn1U3dzJgaoJlE6nFaE6kiTR398Ph8OB9nblhlG1qb6/v7/hOM/zaG9v
+      h16vh8fjUZxHkiQqlYpqGLkmUwvdbnWeyWSC0WhEV5dyF2q73Y6VlRWkUqn6sZr/FovFsLCw
+      oDpLA++P9hsJhUJYWFjA2tpaQ38gSRJ2ux0mkwk+n6/hegDqM2x7eztIkjxYBUilUohGo/B6
+      vejv71eMoIIgoFKp1O3ajXAcB57nMTY2pngw4XAYbW1tio4lSRKmp6extLSkOgrKsoxEIgGX
+      y9VwvNb5o9GoQnFq57Esqxh1GYZBb28votFoQzgWQL2T1kJ/NUWvUalUIIqiwtYlCAK5XA7h
+      cFhVceLxOLq7u+sRoho159Fmsyl+y1qEy+v1Kuz8WhSrmUySJHi9XoUPAFQHqVAopOqrFAoF
+      DAwMqM6MtUFlo5nDcRzW1tZgtVrR0dGhOM/v99dDu6lUqiHcXBuYYrGYYrY1GAzgOA6xWOzg
+      fYCanZ7NZpFOpxs0l+d5rKyswOFw1J3XjaRSKUQiESwuKsusTSYTEokEOI5DMBhsiPUPDg7W
+      FW4j5XK5Pk1uNrfK5XLdD1Fz6GoRFjV7PZlMgiRJ1aRLqVTCsWPHwDBMg0KyLItQKASn06lq
+      dvj9fuj1evh8PoXM5XJhbW1NoaiFQgHT09N1RdhIzfTJZrMKU8bj8aBQKCCTySgcVrfbjUKh
+      gHQ6rdrOcrlcj/NvRpIkLC4uKsw4URQhCEI9MlNDp9NBr9cjn88jk8koZmKe52GxWOB0OhWj
+      fKlUQqFQUAwmwPs5lJ6eHuh0uoNVAJIkwTAMTCYTUqlUQycnCAJWqxUMw6Crq0vRgRwOBwYG
+      BlR/XJqmwbIs/H4/Ojo6FNGjZhEgAOjp6UFvb2+DzGg0QhAEeDwe1UhIoVAAwzA4efKkQiaK
+      Yt2B3kxHRweCwSC8Xm+DvUuSJPx+PzKZjOoIGY1GwXGc4kFLkoRoNFo/dyM9PT0YHx9XzWzX
+      Zliz2axwZlmWhcFgAMuyik5nNpthMBiavp+glklX83HcbjesVqtqNIcgCHi93gYTjyAImEym
+      +vb6G2P3QHXQqznJQ0NDDTKSJOu+2uYBrJaVX1hYqJpyipYeAIIgoKenp6Ez1xzghYUFRRSB
+      53msr69jaWmpbp9vhGVZcBxXT2ht/E4AWFpaUh2tKYrC1NRUPeGzEbPZjLW1NVVZpVKphxk3
+      Uxut1UKrq6urqFQqioy1Xq9HOp2G2+1u6sdwHKf4zloosGYGbSaVSqGvr0/hXG7MzA8ODjbI
+      as5ls5KQWqdSU/BcLgen06kYpDKZDO7cuVNPem1kfn4ew8PDYBhGocQ1H4EkSXR2Nu4mXSqV
+      EA6H66HTzdGlWq5js/lXLpfBsix0Oh3S6fTBKgBBEGhvb0cwGESxWFT8iAaDARaLBWazuUHG
+      MAyGh4fR1taGgYEBxYOx2Wxob2+H2WxumJolSaor22Z/o1KpIBaLwev1qpo5hUIBhUJBVebx
+      eGC32xXfCQDBYBBdXV2K0RpA3dxS6zwOhwOxWEzhGwDVUgiz2ax4mBRFQafToVAoKEZIoPq7
+      LCwsKMKZtTBgOp1WDAy1WD3DMKr3B7xvs2/G6/Xi4cOHCrPK4XCgra1NNZ5fqVSwuLiIfD6v
+      aIvRaEQymcT8/LxicGMYRtURr7XP4/Gozv4Gg6GubA6H4+BnALPZDKfTqRqyrCV8UqlUQ8fj
+      eR6zs7MolUqq8fdYLAaPx4NyuYxwOFyX5/P5urO6uUPm83k4HA6USiXVsF1tFFNrZygUgsfj
+      aToDrKysKMJvpVIJZrMZRqNRvSjrPWd38+yXz+eRSqWg0+lUO53ZbK7Gszd1htXVVbS3t8Nk
+      MqnmHXw+H0iSVE0ipVIplEol1Q7W3d2Ncrms+p3xeBwDAwMKZz2TyaBUKuHevXuKcObJkycx
+      MDCAoaEhBAKBBhlJkuju7obValW0pVQqweVyKUZ/oDp41XyfzbPKysoK9Hp9a3wAAIhEIshm
+      sygUCoqO53a7YbFYYDKZGm6YYRgMDAxgYmICx48fV9xwLQzqcDjqSSOg+gNms1lwHKdwBI1G
+      IxKJhOqIXCwWsbq6CofDoZiygapJEgqFFJ1clmUwDIO+vj6F4tRsZ5/PB69X+bZ3juPgdrtV
+      k4N+vx/t7e0KuzudTiOdTsPpdCqUo1YDtL6+rpo8jEajKBaLis5qtVrR1dXVNAkYiURQKpVU
+      I1ImkwnRaFTxmzkcDpw4cQIjIyOKdpIkWc+pqJlcpVIJJ06cUPgVZrO56XlGoxEdHR2gKEoR
+      jevs7ITBYMDc3BwKhcLB7w3a1tYGg8GAWCzWMMXWQpZmsxnpdLo+QtUQRbGeLp+YmKjfdKlU
+      wp07d2Cz2RAOh3H27Nn6OVarFc8884xqO0wmE8bGxlRltdg5y7IKe7Y2y4iiiFgs1uBA14r8
+      ZFlWjeeLoojp6el63VKNWra2XC4rYug0TderT9PptMKer5X5bh5Menp6UKlU4Pf7VU0Zj8cD
+      q9WqMDtisRiWlpZUlQqoPr9KpaIYybPZLIrFYj0IsLmNNYXhOE7VX1GDoigUi0XMz8+js7Oz
+      bj7JslyvdvX5fIr7W1tbQygUgsvlUshqIeqLFy9WfYxttWSPEEURa2trSCaTikI4giAwODhY
+      j4RsbnipVEI8Hsfx48cbjptMJvT39yOVSqk+6EKhgGAwCJPJpJqgUaMWq1ebHXQ6XX3kn5iY
+      aJAZDIa6QjSzTycnJxUjZDKZRKVSQXd3Nx4+fNhQtAdUO92DBw8UM0ctc1w7byO1EK8a+Xwe
+      4XAY6XRaEeXy+/2qhYFAteNls1l0dXVhZWWlQVZTplwupwjXyrIMQRAgCILCmd2KQqEAs9kM
+      q9WKVCpVV4BawSHP84jH4w3PBKiO8izLoq+vTzGAbVa+Aw+DHj9+HC6XS+HMEgSBbDaLaDRa
+      r+XeiNFohMvlUvzwPM/XHTa1jCfP8/XCp+3CsixyuVzDmoQaNYdTlmVVx7NUKmFhYQFTU1MK
+      mU6nw8zMDFZXVxuOVyoVZDIZPHz4ULWILhwOY2JiAh0dHQ3HZVmu+xyblWYrLBYLhoaG4HK5
+      FHb3VvA8j2KxiGAwqOjkoVCo/mw2zyq1tQOJRAJra2s7up4oiuA4ruHea7VfRqMRZrNZ4d+F
+      w2EQBFGPum3Fgc4AkiTV468LCwv1zChQfZgulwtGoxGxWEx1BJVlWRHzpSiq3hHUnEubzYbV
+      1VWEQiFFvL8ZFosFk5OTqjKbzYYzZ840PbdWw652viRJMJlMCv8gEAhs2RGdTieWlpZgsVga
+      RtBsNovp6Wl4PB4Eg0HVUolmbVxfX4cgCAiFQgrFasb6+jpGRkbw7rvvguO4huRbZ2fnlqN7
+      IpFQHZGbUcvS6/V6ZDIZMAzTcH81X6kWtt3Idk0s4IAVgKIoRQeuUTOPAKjG0OPxeH3U3bg6
+      qjZKz8zMIBAIKB5mqVQCTdNNfYG9xmKxoL29Hevr64qYfi3+r+aUbkW5XEY8HgfLsg2dzOFw
+      oLe3F+Vyuam5o4bVasXAwICq77AVBoMB9+7dw/j4uGql6FbU1mWYzWaFY7oVLMuiq6tLMWg4
+      nU5ks1kEg0FIkrRt5d/ModkaUZbl+nK7zaGt2uxQyw5unB1qawgCgYBqzD6TydRHuoOgVou+
+      WRFzuRz8fj/sdnvTQaAZJEmio6NDMStuTKhtrmfaClEUcfv2bUQiETx48GDb5/n9foyPj8Ns
+      NitKS7ZDMplUzXSrUfMJR0ZGYLVaVc1bgiBUk1074dAoAEVR6OjoQKVSqa+aqlGLuIiiqKgF
+      KhQK4DgO0WhUUbsCVB3I2lqCg6CWw9hcEJbJZHD//n0Eg0FF+cFW5HK5ekJu84xCENX10AzD
+      7Oj+CIKoZ3ubObzNzqsNTs2SZGpkMhnwPI+BgQHV+pxm1LLRzbLSkiSBJEnVgsVtX2PXZ+4x
+      kiTVl+j19vYqZoBkMgmdTofTp083yCiKQi6XgyAIinLaSqWC9fV1GAwG1Vr6vaa2XLO2kH4j
+      ZrMZw8PDGBkZUa0vakZtNVutSnYj5XK5nnndiQLUEmDJZHJHyrhbDAYDKIrCyspK05VyO6WW
+      /HO73aoJye1yILtCPC6CICAcDteTJu3t7dt64JIkIRwOo1AooKOjY0e2526oVCqIRqP1EN25
+      c+ce+ztrs18ul4Ner29YwijLMjiOw9zcHGiaxujo6La/N5lMolQqQa/Xqybm9pJEIoF4PA6S
+      JNHT06OaXNwptdxCOp3G4ODgrs2gJ2LvQpqmtx3D30i5XEYoFILVakUsFtt3BRAEAalUCh6P
+      Z9dO2WbS6TTW19dhtVoVZkcsFsPt27fh8/l2bAZkMhnEYjGYzeZ9V4BadK7ZeuGdIssy5ufn
+      QVEUGIZBLBZTLRXfDk/EDPCkUFuPAFQjWdsNL7aCSCRSz6Y2y4jvFRv3B9or5ubmAKDuHO8k
+      D7IRTQGOIJFIBD6frx5Y2IkjfFjY3G13q2BPhAmksbfUKk6Xl5dhMBieSAXYqxlFmwGOIBzH
+      oVQq1atX1baFOSpoCqBxpDk0eQANjVagKYDGkUZTAI0jzf8PrSr8BQ0d+lsAAAAASUVORK5C
+      YII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+      YII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
