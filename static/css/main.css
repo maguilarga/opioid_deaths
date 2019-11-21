@@ -937,7 +937,7 @@ hr {
 }
 
 .testimonial-item {
-  padding: 40px;
+  padding: 30px;
   border-radius: 4px;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -946,13 +946,16 @@ hr {
 .testimonial-item .img-thumb {
   position: relative;
   margin: 15px 15px 15px 0;
+  width: 1200px;
+  height: 250px;
 }
 
 .testimonial-item .img-thumb img {
-  border-radius: 50%;
+  border-radius: 25%;
   box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.5);
   display: inline-block;
-  width: inherit;
+  width: 1200px;
+  height: 250px;
   padding: 7px;
 }
 
@@ -969,7 +972,7 @@ hr {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 30px;
-  margin: 0;
+  margin: 5px;
 }
 
 .testimonial-item .info h2 a {
@@ -982,7 +985,7 @@ hr {
   font-size: 14px;
   font-weight: 500;
   line-height: 26px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .testimonial-item .info h3 a {
