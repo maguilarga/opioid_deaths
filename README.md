@@ -2,6 +2,8 @@
 **Opioid Deaths in Conneticut**
 **A Data Analysis of an Epidemic**
 
+![pic](./opioid_deaths/Heroku app/opioid_deaths/static/img/pills.png)
+
 *Analyzing the Opioid Problem*
 
 **About the Project**
