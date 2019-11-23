@@ -2,7 +2,7 @@
 **Opioid Deaths in Conneticut**
 **A Data Analysis of an Epidemic**
 
-![pic](./opioid_deaths/Heroku app/opioid_deaths/static/img/pills.png)
+<img src="https://d.newsweek.com/en/full/946477/vitamins-pills-stock.jpg" height=300>
 
 *Analyzing the Opioid Problem*
 
